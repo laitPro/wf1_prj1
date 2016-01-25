@@ -24,12 +24,15 @@ body{
 	behavior: url('../bower/background-size-polyfill/backgroundsize.min.htc');*/
 }
 .container{
-	width: 960px;
+	width: 980px;
 	margin: 0 auto;
+	padding: 0 10px;
 }
 .container-big{
-	width: 1201px;
+	max-width: 1221px;
+	min-width: 960px;
 	margin:0 auto;
+	padding:0 10px;
 }
 .clearfix:before, .clearfix:after{
 	content: "";
@@ -46,9 +49,10 @@ body{
 	overflow: hidden;
 	background: url("../img/main-bg.png") left top no-repeat;
 	background-size: cover;
-	behavior: url('../bower/background-size-polyfill/backgroundsize.min.htc');
+	behavior: url('../js/backgroundsize.min.htc');
 	padding-bottom: 60px;
 	position: relative;
+	min-width: 980px;
 }
 
 /*BUTTON*/
@@ -86,6 +90,8 @@ input[type="submit"]::-moz-focus-inner {
 	background: url("../img/header-pattern.png") repeat-x;
 	padding-top:10px;
 	min-height:90px;
+
+	min-width: 960px;
 }
 
 .main-header:after{
@@ -99,7 +105,7 @@ input[type="submit"]::-moz-focus-inner {
 	-moz-box-shadow: 0 1px rgba(0,0,0,.1);
 	box-shadow: 0 1px rgba(0,0,0,.1);
 	/*-ms-behavior: url("../bower/PIE-1.0.0/PIE.htc");*/
-	behavior: url('bower/download-latest-1/PIE.htc');
+	behavior: url('js/PIE.htc');
 }
 .logo{
 	display: inline-block;
@@ -139,7 +145,7 @@ input[type="submit"]::-moz-focus-inner {
 	background-position: center center;
 	background-repeat: no-repeat;
 	position: relative;
-	behavior: url('bower/download-latest-1/PIE.htc');
+	behavior: url('js/PIE.htc');
 }
 .icon-fb{
 	background-image: url("../img/fb.png");
@@ -372,15 +378,15 @@ input[type="submit"]::-moz-focus-inner {
 .contact-text{
 	max-height: 36px;
 	overflow: hidden;
-	word-wrap: break-word;
 	position: relative;
 	padding-left: 97px;
 	display: inline-block;
 	vertical-align: top;
 	width: 100%;
-	word-wrap: break-word;
 	font-size: 14px;
 	line-height: 36px;
+	white-space: nowrap;
+	text-overflow:ellipsis;
 	color: #727070;
 	text-decoration: none;
 	font-style: normal;
@@ -433,11 +439,12 @@ input[type="submit"]::-moz-focus-inner {
     border-bottom-color: #c5c5c5;
     border-radius: 5px 5px 6px 6px;
     margin-bottom: 35px;
-    behavior: url('bower/download-latest-1/PIE.htc');
+   	behavior: url('js/PIE.htc');
     /*-pie-background: linear-gradient(to top, #f0eeed 0%, #f7f6f5 100%); */
 }
 
 .content-section-title{ 
+	padding-right: 20px;
 	min-height: 56px;
 	height: auto;
 	position: relative;
@@ -447,13 +454,13 @@ input[type="submit"]::-moz-focus-inner {
 	margin-bottom:37px;
 	font-size: 24px;
 	padding-left:42px;
-	padding-top:15px;
+	padding-top:14px;
 	padding-bottom:17px;
 	text-shadow: 0 1px #666565;
 	background-color: #727070;
 	box-shadow: inset 0 1px rgba(255,255,255,.3);
 	background-image: linear-gradient(to top, #7b7878, #a9a8a8);
-	line-height: 0.9;
+	line-height: 24px;
 	border:1px solid transparent;
 	border-left:0;
 	border-right: 0;
@@ -463,7 +470,7 @@ input[type="submit"]::-moz-focus-inner {
 	border-radius: 0 0 1px 1px;
 	font-style: normal;
 	font-weight: 600;
-	behavior: url('bower/download-latest-1/PIE.htc');
+	behavior: url('js/PIE.htc');
 }
 .ie8 .content-section-title{
 	/*padding-top:1px;*/
@@ -484,7 +491,7 @@ input[type="submit"]::-moz-focus-inner {
 	box-shadow: 3px 2px 27px 5px rgba(236,232,227,.75), inset 0 2px 24px rgba(121,121,121,.23);
 	border:1px solid rgba(182,182,182,.67);
 	background-image: linear-gradient(to top, #f3f2f0 0%, #f6f5f5 100%);
-	behavior: url('bower/download-latest-1/PIE.htc');
+	behavior: url('js/PIE.htc');
 }
 .img-i{
 	width: 133px;
@@ -495,7 +502,7 @@ input[type="submit"]::-moz-focus-inner {
 	margin-top:-66.5px;
 	left:50%;
 	margin-left:-66.5px;
-	behavior: url('bower/download-latest-1/PIE.htc');
+	behavior: url('js/PIE.htc');
 }
 
 .info-about-me{
@@ -506,11 +513,12 @@ input[type="submit"]::-moz-focus-inner {
 	list-style: none;
 }
 .info-about-me .info-row{
+	padding-right: 20px;
 	word-wrap: break-word;
-	margin-bottom:15px;
+	margin-bottom:8px;
 	font-size: 14px;
 	color: #727070;
-	line-height: 0.85;
+	line-height: 16px;
 	font-style: normal;
 	font-weight: normal;
 }
@@ -519,13 +527,14 @@ input[type="submit"]::-moz-focus-inner {
 }
 .skills .skills-ttitle{
 	margin:0;
+	margin-top:-2px;
 	float: left;
 	display: inline-block;
 	vertical-align: top;
 	font-size: 14px;
 	color: #727070;
 	margin-right: -6px;
-	line-height: .85;
+	line-height: 16px;
 	font-style: normal;
 	font-weight: 600;
 	width: 137px;
@@ -593,8 +602,8 @@ input[type="submit"]::-moz-focus-inner {
 }
 .life-skill-time{
 	font-size: 14px;
-	line-height: 0.85;
-	margin-top: 7px;
+	line-height: 16px;
+	margin-top: 3px;
 	color:#727070;
 	font-style: normal;
 	font-weight: normal;
@@ -602,7 +611,7 @@ input[type="submit"]::-moz-focus-inner {
 .wrap-info .life-skill{
 	position: relative;
 	padding-left:94px;
-	padding-bottom:15px;
+	padding-bottom:14px;
 	/*margin-left:42px;*/
 	margin-right: 48px;
 	padding-top:10px;
@@ -615,7 +624,7 @@ input[type="submit"]::-moz-focus-inner {
 	position: absolute;
 	/*top:-10px;*/
 	top:50%;
-	margin-top:-26.5px;
+	margin-top:-28.5px;
 	left:0;
 	content: '';
 	display: block;
@@ -659,7 +668,7 @@ input[type="submit"]::-moz-focus-inner {
 	background-color: #edeceb;
 	background-image: linear-gradient(to top, #f6f5f4, #f6f5f4);
 	box-shadow: 0 0 3px rgba(251,251,251,.75), inset 0 1px 1px rgba(128,128,128,.29);
-	behavior: url('bower/download-latest-1/PIE.htc');
+	behavior: url('js/PIE.htc');
 }
 .life-skill:last-child:after{
 	content: '';
@@ -676,7 +685,7 @@ input[type="submit"]::-moz-focus-inner {
 	background-color: #fff;
 	box-shadow: 0 1px rgba(0,0,0,.1);
 	font-size: 0;
-	behavior: url('bower/download-latest-1/PIE.htc');
+	behavior: url('js/PIE.htc');
 	/*z-index: 10000;*/
 }
 .log-in,.copyright{

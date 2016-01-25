@@ -12,6 +12,9 @@
 	width: 192px;
 	margin-right: 14px;
 }
+.wrap-message{
+	width: auto;
+}
 .wrap-user-info.email{
 	margin-right: 0;
 }
@@ -50,6 +53,8 @@
 	background-image: linear-gradient(to top, rgba(233,231,231,.45), rgba(251,249,249,0));
 }
 .wrap-message textarea{
+	
+	overflow: auto;
 	width: 403px;
 	max-width: 403px;
 	height: 183px;
@@ -84,7 +89,7 @@
 
 }
 
-.wrap-button input{
+.wrap-button button{
 	border:none;
 	outline: none;
 	display: inline-block;
@@ -92,11 +97,11 @@
 	width: 123px;
 	height: 39px;
 }
-.wrap-submit-button input{
+.wrap-submit-button button{
 	margin-left:29px;
 }
 
-.wrap-submit-button input[type="reset"]{
+.wrap-submit-button button[type="reset"]{
 	margin-left: 95px;
 }
 

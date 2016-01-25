@@ -1,13 +1,14 @@
 /*SECOND PAGE*/
 .job{
-	behavior: url("../bower/download-latest-1/PIE.htc");
+	behavior: url('js/PIE.htc');
 }
 
 .job{
 	position: relative;
 	overflow: hidden;
 	display: block;
-	float: left;
+	display: inline-block;
+	vertical-align: top;
 	width: 168px;
 	background-color: #fff;
 	background: #fff;
@@ -16,7 +17,7 @@
 	border:1px solid #cfcfcf;
 	border-bottom-color: #c5c5c5;
 	border-top-color: #e2e2e2;
-	margin-right:31px;
+	margin-right:27px;
 	margin-bottom:32px;
 	
 
@@ -27,6 +28,7 @@
 .wrap-job-img{
 	position: relative;
 	overflow: hidden;
+	border-bottom: 1px solid #c0c0c0;
 	
 }
 .job-img{
@@ -62,7 +64,7 @@
 	display: inline-block;
 	vertical-align: top;
 	background: white;
-	behavior: url("../bower/download-latest-1/PIE.htc");
+	behavior: url('js/PIE.htc');
 }
 .job-img{
 	border-radius: 5px 5px 0 0;
@@ -84,17 +86,17 @@
 	font-weight: 600;
 	color:#727070;
 	text-shadow: 0 1px rgba(255,255,255,.75);
-	padding-top:10px;
+	padding-top:8px;
 	/*padding-left:35px;*/
 	padding-bottom:12px;
 	text-align: center;
-	behavior: url("../bower/download-latest-1/PIE.htc");
+	behavior: url('js/PIE.htc');
 
 }
 .job-title:hover{
 	text-decoration: underline;
 }
-.job-title:before{
+/*.job-title:before{
 	content: '';
 	display: block;
 	height: 1px;
@@ -103,7 +105,7 @@
 	width: 100%;
 	left:0;
 	background: #c0c0c0;
-}
+}*/
 .job-text{
 	padding-top:5px;
 	padding-left:12px;
@@ -126,7 +128,7 @@
 	box-shadow: 0 2px 1px rgba(9,9,9,.07), inset 0 -2px 3px rgba(41,41,41,.05), inset 0 0 3px #f6f7f7;
 	border: solid 1px #b6b6b6;
 	background-image: linear-gradient(to top, #edebea, #fbf9f9 94%, #fff);
-	behavior: url("../bower/download-latest-1/PIE.htc");
+	behavior: url('js/PIE.htc');
 }
 .ie8 .add-project:hover:before{
 	content: "";
@@ -145,7 +147,7 @@
 	box-shadow: inset 0 -2px 3px rgba(41,41,41,.05), inset 0 0 3px rgba(202,202,202,.61);
 	background-color: #c2c0c0;
 	background-image: linear-gradient(to top, #c2c0c0, #e3e1e1 86%, #e3e1e1 87%, #e8e7e7);
-	behavior: url("../bower/download-latest-1/PIE.htc");
+	behavior: url('js/PIE.htc');
 }
 .add-project-text{
 	font-size: 14px;
@@ -155,7 +157,7 @@
 	font-weight: 600;
 	line-height: 22px;
 	text-decoration: none;
-	behavior: url("../bower/download-latest-1/PIE.htc");
+	behavior: url('js/PIE.htc');
 }
 
 .icon-add-project{
