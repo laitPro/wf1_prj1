@@ -1,0 +1,14 @@
+{
+  "name": "wf1",
+  "dependencies": {
+    "jquery": "1.12.0",
+    "normalize-css": "~3.0.3",
+    "html5shiv": "~3.7.3",
+    "respond": "~1.4.2",
+    "es5-shim": "~4.4.1",
+    "modernizr": "2.8.3",
+    "background-size-emu": "https://github.com/Metafalica/background-size-emu.git",
+    "background-size-polyfill": "https://github.com/louisremi/background-size-polyfill.git#~0.2.0",
+    "download-latest-1": "http://css3pie.com/download-latest-1.x"
+  }
+}
