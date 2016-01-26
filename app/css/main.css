@@ -146,6 +146,7 @@ input[type="submit"]::-moz-focus-inner {
 	background-repeat: no-repeat;
 	position: relative;
 	behavior: url('js/PIE.htc');
+	text-indent: -9999px;
 }
 .icon-fb{
 	background-image: url("../img/fb.png");
@@ -180,11 +181,11 @@ input[type="submit"]::-moz-focus-inner {
 	background-image: url("../img/gh-hovert.png");
 	background: url("../img/gh-hovert.png") center center no-repeat, linear-gradient(to top, #e9e6e4, #fbf9f9 94%, #fff);
 }
-.icon-text{
+/*.icon-text{
 	position: absolute;
 	top:0;
 	left: -9999px;
-}
+}*/
 /*Main-content*/
 .main-content{
 	padding-top:35px;
