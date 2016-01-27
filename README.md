@@ -1,4 +1,5 @@
 1) git clone https://github.com/nikitalait/wf1_prj1.git your_dir
-1) npm i
-2) bower i
-3) gulp
+2) cd your_dir
+3) npm i
+4) bower i
+5) gulp
