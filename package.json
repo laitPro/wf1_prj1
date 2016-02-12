@@ -2,6 +2,7 @@
   "name": "wf1",
   "devDependencies": {
     "browser-sync": "^2.11.1",
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "gulp-connect-php": "0.0.7"
   }
 }

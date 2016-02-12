@@ -9,6 +9,7 @@
     "modernizr": "2.8.3",
     "background-size-emu": "https://github.com/Metafalica/background-size-emu.git",
     "background-size-polyfill": "https://github.com/louisremi/background-size-polyfill.git#~0.2.0",
-    "download-latest-1": "http://css3pie.com/download-latest-1.x"
+    "download-latest-1": "http://css3pie.com/download-latest-1.x",
+    "jquery.placeholder": "~0.2.4"
   }
 }

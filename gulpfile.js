@@ -1,13 +1,10 @@
 var gulp = require('gulp'),
-	t = require('browser-sync');
+	t = require('browser-sync').create();
 
 
 gulp.task('browser-sync', function() {
-    t({
-    	port: 9000,
-        server: {
-            baseDir: "app"
-        }
+    t.init({
+    	proxy: "wf1"
     });
 });
 
@@ -17,9 +14,6 @@ gulp.task('watch', function () {
 		'app/css/**/*.css'
 		]).on('change', t.reload);
 })
-
-
-
 gulp.task('default', ['browser-sync','watch'], function () {
     
 });

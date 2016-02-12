@@ -1,0 +1,116 @@
+/*AUTORIZATION*/
+.ie .aut-wrap{
+	margin-top: -256px;
+	margin-left: -166px;
+}
+.aut-wrap{
+	position: absolute;
+	/*margin-top:-150px;*/
+	left:50%;
+	top:40%;
+	transform:translate(-50%,-40%);
+}
+.aut-title{
+	font-size: 12px;
+	line-height: 16px;
+	color:#727070;
+	margin-bottom: 3px;
+	margin-left: 22px;
+}
+.aut-info{
+	width: 332px;
+	padding-top: 39px;
+	padding-left: 37px;
+	padding-bottom: 39px;
+	
+
+	border-radius: 5px;
+	background-color: #f5f4f3;
+
+	box-shadow: 0 11px 27px rgba(159,159,159,.75), inset 0 6px 6px #fff;
+	border: solid 1px #c3c2c2;
+
+	background-image: linear-gradient(to top, #f0eeed, #fbfbfa);
+
+}
+.aut-input{
+	position: relative;
+	display: block;
+	box-shadow: 0 0 1px rgba(255,255,255,.15), 0 1px rgba(255,255,255,.35), inset 0 2px 2px rgba(114,112,112,.1);
+	border: solid 1px #d6d5d3;
+	border-radius: 3px;
+
+	background-image: linear-gradient(to top, #f4f3f3, #f7f8f9);
+
+	margin-bottom: 24px;
+
+	width: 254px;
+
+	font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 1.2;
+    color: #8b8989;
+    padding-top: 12px;
+    padding-left: 8px;
+    padding-bottom: 12px;
+    padding-right: 15px;
+    text-overflow: ellipsis;
+    padding-left: 71px;
+    outline: none;
+    background-image: url("../img/spritesheet.png");
+    background-repeat: no-repeat;
+    
+}
+.aut-input.email{
+    background-position: 14px 0;
+}
+.aut-input.pass{
+	 background-position: 14px -40px;
+}
+.ie .aut-check-me{
+	display: inline-block;	
+}
+.ie .aut-labl-check-me{
+	display: inline-block;
+	padding-left:0;
+}
+.aut-check-me{
+	display: none;
+}
+.aut-check-me:checked + .aut-labl-check-me:before{
+	background: url("../img/checkmark.png") center center no-repeat,linear-gradient(to top, #fbfbfa, #ffffff);
+}
+.aut-labl-check-me:hover{
+	cursor: pointer;
+}
+.aut-labl-check-me{
+	display: block;
+	position: relative;
+
+	font-size: 14px;
+	color:#727070;
+	line-height: 15px;
+	padding-left:27px;
+
+	margin-bottom: 22px;
+
+}
+.aut-labl-check-me:before{
+	content: '';
+	display: inline-block;
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 15px;
+	height: 15px;
+	line-height: 15px;
+	border-radius: 2px;
+	background-image: linear-gradient(to top, #fbfbfa, #ffffff);
+	box-shadow: 0 0 4px rgba(156,155,155,.05), 0 1px rgba(167,166,166,.15), inset 0 1px rgba(114,112,112,.33);
+
+}
+.aut-btn{
+	margin-left:54px;
+	width: 152px;
+}

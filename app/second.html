@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class=" ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class=" ie ie7" lang="en"> <![endif]-->
@@ -20,6 +22,8 @@
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/second.css">
+		<link rel="stylesheet" href="css/third.css">
+		<link rel="stylesheet" href="css/five.css">
 		<link rel="stylesheet" href="css/_media.css">
 		<!-- Нужно все скомпилировать что выше и закинуть в этот файл -->
 		<!-- <link rel="stylesheet" href="compiled.min.css"> -->
@@ -58,40 +62,23 @@
 						LoftSchool...
 					</h1>
 				</a>
+				<a class="main-nav-toggle" href="#"><span></span></a>
 				<ul class="icons">
 					<li class="icons-item">
-						<a href="#" class="icon icon-fb">facebook</a>
-						<!-- <a href="#" class="icon-text">
-							facebook
-						</a>	 -->					
+						<a href="#" class="icon icon-fb">facebook</a>				
 					</li>
 					<li class="icons-item">
 						<a href="http://vk.com/laitinen_nikita" class="icon icon-vk">vkontakte</a>
-						<!-- <a href="#" class="icon-text">
-							vkontakte
-						</a> -->
 					</li>
 					<li class="icons-item">
-						<a href="#" class="icon icon-tw">twitter</a>
-						<!-- <a href="#" class="icon-text">
-							twitter
-						</a> -->						
+						<a href="#" class="icon icon-tw">twitter</a>					
 					</li>
 					<li class="icons-item">
 						<a href="https://github.com/nikitalait" class="icon icon-gt">githab</a>
-						<!-- <a href="#" class="icon-text">
-							githab
-						</a> -->
 					</li>
 				</ul>
-			</div>
-		</header>
-
-		<div class="main-content">
-			<div class="container clearfix">
-				<aside class="sidebar">	
-					<ul class="main-nav">	
-						<li class="mn-link-item">
+				<ul class="main-nav header">	
+						<li class="mn-link-item ">
 							<a href="index.html" class="link">Обо мне</a>
 						</li>
 						<li class="mn-link-item active">
@@ -100,38 +87,17 @@
 						<li class="mn-link-item">
 							<a href="third.html" class="link">Обратная связь</a>
 						</li>        				
-					</ul>
-					<div class="contacts">	
-						<div class="contacts-title-wrap">
-							<div class="contacts-title">
-								<span class="contacts-title-text">Контакты</span>
-							</div>
-						</div>
-						<ul class="contacts-list">
-							<li class="contact">
-								<a href="mailto:nikitalaitinen@ya.ru" class="contact-text contact-text-email" title="pochta@mail.ru">
-									nikitalaitinen@ya.ru
-								</a>
-							</li>
-							<li class="contact">
-								<a href="tel:+7914097648" class="contact-text contact-text-phone" title="+79114097648">
-									+79114097648
-								</a>								
-							</li>
-							<li class="contact">
-								<a href="skype:nikitalait?call" class="contact-text contact-text-skype" title="nikitalait">
-									nikitalait
-								</a>								
-							</li>
-						</ul>
-					</div>
-				</aside>
+				</ul>
+			</div>
+		</header>
+
+		<div class="main-content">
+			<div class="container clearfix">
 				<main class="main-content-wrapper">
 						<section class="content-section">
 								<h2 class="content-section-title">Мои работы</h2>
-								<div class="wrap-info clearfix">
-									<div class="job">
-										
+								<div class="wrap-info job-info clearfix">
+									<div class="job">									
 										<div class="wrap-job-img">
 											<div class="more-info">
 												<a href="#" class="more-info-text">"Подробнее"</a>
@@ -198,11 +164,73 @@
 								</div>
 						</section>		
 				</main>
+				<aside class="sidebar">	
+					<ul class="main-nav">	
+						<li class="mn-link-item">
+							<a href="index.html" class="link">Обо мне</a>
+						</li>
+						<li class="mn-link-item active">
+							<a href="second.html" class="link">Мои работы</a>
+						</li>
+						<li class="mn-link-item">
+							<a href="third.html" class="link">Обратная связь</a>
+						</li>        				
+					</ul>
+					<div class="contacts">	
+						<div class="contacts-title-wrap">
+							<div class="contacts-title">
+								<span class="contacts-title-text">Контакты</span>
+							</div>
+						</div>
+						<ul class="contacts-list">
+							<li class="contact">
+								<a href="mailto:nikitalaitinen@ya.ru" class="contact-text contact-text-email" title="pochta@mail.ru">
+									nikitalaitinen@ya.ru
+								</a>
+							</li>
+							<li class="contact">
+								<a href="tel:+7914097648" class="contact-text contact-text-phone" title="+79114097648">
+									+79114097648
+								</a>								
+							</li>
+							<li class="contact">
+								<a href="skype:nikitalait?call" class="contact-text contact-text-skype" title="nikitalait">
+									nikitalait
+								</a>								
+							</li>
+						</ul>
+					</div>
+				</aside>
+			</div>
+			<div class="container">
+				<ul class="social-icons">
+					<li class="social-icon-item">
+						<a href="#" class="social-icon fb">
+							fb
+						</a>				
+					</li>
+					<li class="social-icon-item">
+						<a href="http://vk.com/laitinen_nikita" class="social-icon vk">
+							vk
+						</a>				
+					</li>
+					<li class="social-icon-item">
+						<a href="#" class="social-icon tw">
+							tw
+						</a>				
+					</li>
+					<li class="social-icon-item">
+						<a href="https://github.com/nikitalait" class="social-icon gt">
+							gt
+						</a>				
+					</li>
+					
+				</ul>
 			</div>
 		</div>
 		<footer class="main-footer">
 			<div class="container">
-				<a href="index.html" class="log-in">
+				<a href="fourth.html" class="log-in">
 					вход
 				</a>
 				<div class="copyright">
@@ -211,16 +239,59 @@
 	      	</div>
 		</footer>
 	</div>
-	
-
-
-
+	<div class="popup-parent hidden">
+			<div class="add-wrap hidden">
+				<div class="add-title">Добавление проекта</div>
+				<form action="/" class="add-info" method="POST" id="add-form">
+						<a href="#" class="form-close close-btn"></a>
+						<div class="alert-error hidden">
+							<a href="#" class="form-close alert-error-close close-btn"></a>
+							<p class="alert-error-title">Ошибка!</p>
+							<p class="alert-error-text">Невозможно добавить проект.</p>
+						</div>
+						<label for="name-of-prj" class="add-label name">Название проекта</label>
+						<div class="tooltip-wrap">
+							<span class="tooltip-l hidden">введите название</span>
+							<input type="text" placeholder="Введите название" id="name-of-prj" name="name-of-prj" class="add-input">
+						</div>
+						<label for="img-prj" class="add-label">Картинка проекта</label>
+						<div class="tooltip-wrap">
+							<span class="tooltip-l hidden">изображение</span>
+							<input type="text"   placeholder="Выберите картинку" id="filename" class="add-input filename" disabled>
+							<!-- <span  id="filename" class="add-input filename"></span> -->
+							<div class="file-upload">
+								<label for="img-prj" class="label-file">
+									<input type="file" name="file" id="img-prj" class="hard-input">
+								</label>					        
+							</div>
+						</div>											
+						<label for="url-prj" class="add-label">URL проекта</label>
+						<div class="tooltip-wrap">
+							<span class="tooltip-l hidden">ссылка на проект</span>
+							<input type="text" id="url-prj" class="add-input" name="url-prj" placeholder="Добавьте ссылку">
+						</div>	
+						<label for="about-prj" class="add-label">Описание</label>
+						<div class="tooltip-wrap">
+							<span class="tooltip-l hidden">описание проекта</span>
+							<textarea id="about-prj" class="add-text-area" name="about-prj" placeholder="Пара слов о вашем проекте"></textarea>
+						</div>	
+						<div class="wrap-btn">
+							<button type="submit" class="btn btn-sent btn-reset btn-add">Добавить</button>
+						</div>													      
+  				</form>
+			</div>
+			<div class="alert-added-box hidden">
+				<a href="#" class="form-close close-btn"></a>
+				<div class="alert-added-info">
+					<p class="alert-added-title">Ура!</p>
+					<p class="alert-added-text">Проект успешно добавлен.</p>
+				</div>			
+			</div>
+		</div>
 <div class="hidden"></div>
-
-	
-
 <script src="js/jquery.min.js"></script>
-<script src="js/main.js"></script>
+<script src="js/jquery.placeholder.min.js"></script>
+<script src="js/mainworkli.js"></script>
 	
 </body>
 </html>

@@ -20,6 +20,7 @@
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/third.css">
+		<link rel="stylesheet" href="css/five.css">
 		<link rel="stylesheet" href="css/_media.css">
 		<!-- Нужно все скомпилировать что выше и закинуть в этот файл -->
 		<!-- <link rel="stylesheet" href="compiled.min.css"> -->
@@ -56,37 +57,84 @@
 						LoftSchool...
 					</h1>
 				</a>
+				<a class="main-nav-toggle" href="#"><span></span></a>
 				<ul class="icons">
 					<li class="icons-item">
-						<a href="#" class="icon icon-fb">facebook</a>
-						<!-- <a href="#" class="icon-text">
-							facebook
-						</a>	 -->					
+						<a href="#" class="icon icon-fb">facebook</a>				
 					</li>
 					<li class="icons-item">
 						<a href="http://vk.com/laitinen_nikita" class="icon icon-vk">vkontakte</a>
-						<!-- <a href="#" class="icon-text">
-							vkontakte
-						</a> -->
 					</li>
 					<li class="icons-item">
-						<a href="#" class="icon icon-tw">twitter</a>
-						<!-- <a href="#" class="icon-text">
-							twitter
-						</a> -->						
+						<a href="#" class="icon icon-tw">twitter</a>					
 					</li>
 					<li class="icons-item">
 						<a href="https://github.com/nikitalait" class="icon icon-gt">githab</a>
-						<!-- <a href="#" class="icon-text">
-							githab
-						</a> -->
 					</li>
+				</ul>
+				<ul class="main-nav header">	
+						<li class="mn-link-item ">
+							<a href="index.html" class="link">Обо мне</a>
+						</li>
+						<li class="mn-link-item">
+							<a href="second.html" class="link">Мои работы</a>
+						</li>
+						<li class="mn-link-item active">
+							<a href="third.html" class="link">Обратная связь</a>
+						</li>        				
 				</ul>
 			</div>
 		</header>
-
 		<div class="main-content">
 			<div class="container clearfix">
+				<main class="main-content-wrapper">
+						<section class="content-section">
+								<h2 class="content-section-title">У вас интересный проект? Напишите мне</h2>
+								<div class="wrap-info third clearfix">
+									<form action="/" class="user-form-message" id="form-message" method="POST">
+									      <div class="wrap-user-info">
+									        <label for="user-name">Имя</label>
+									        <div class="tooltip-wrap">
+									        	<span class="tooltip-l hidden">введите имя</span>
+									        	<input type="text" id="user-name" name="user-name"
+									        placeholder="Как к Вам обращаться" class="form-input" />
+									        </div>									        
+									      </div>
+										    <div class="wrap-user-info email">
+										    	 <label for="email">Email</label>
+										    	<div class="tooltip-wrap">
+										    		<span class="tooltip-r hidden">введите email</span>
+										    	 	<input type="text" id="email" name="email" class="form-input"
+										        		placeholder="Куда мне писать" value="" />
+												</div>
+										    </div> 
+									      	<div class="wrap-message">
+										      <label for="message">Сообщение</label>
+										      <div class="tooltip-wrap">
+										      		<span class="tooltip-l hidden">ваш вопрос</span>
+										      		<textarea id="message" name="message" class="form-input " placeholder="Кратко в чем суть"></textarea>
+										      </div>										      
+									    	</div>
+									    	<div class="wrap-capcha">
+									    		<label for="capcha">Введите код, указанный на картинке</label>
+									    		<div class="wrap-capcha-img">
+									    			<img src="img/capcha.png" height="66" width="173" alt="" class="capcha-img">	
+									    		</div>
+									    		<div class="tooltip-wrap capcha">
+									    			<span class="tooltip-r hidden">код капчи</span>
+									    			<input type="text" id="capcha" name="capcha" class="form-input"
+										        	placeholder="Введите код" value="" />
+									    		</div>
+									    		
+									    	</div>
+										    <div class="wrap-submit-button">
+										      <button type="submit" name="submit-form-sent" class="btn btn-sent" id="sent">Отправить</button>
+										      <button type="reset"  name="submit-form-reset" class="btn btn-reset">Очистить</button>
+										    </div>
+  									</form>
+								</div>
+						</section>		
+				</main>
 				<aside class="sidebar">	
 					<ul class="main-nav">	
 						<li class="mn-link-item">
@@ -124,46 +172,36 @@
 						</ul>
 					</div>
 				</aside>
-				<main class="main-content-wrapper">
-						<section class="content-section">
-								<h2 class="content-section-title">Мои работы</h2>
-								<div class="wrap-info third clearfix">
-									<form action="/" class="user-form-message" method="POST">
-									      <div class="wrap-user-info">
-									        <label for="user-name">Имя</label>
-									        <input type="text" id="user-name" name="user-name" class="form-element"
-									        placeholder="Как к Вам обращаться" value="" required/>
-									      </div>
-										    <div class="wrap-user-info email">
-										    	 <label for="email">Email</label>
-										    	 <input type="email" id="email" name="email" class="form-element"
-										        	placeholder="Куда мне писать" value="" required/>
-										    </div> 
-									      	<div class="wrap-message">
-										      <label for="message">Сообщение</label>
-										      <textarea id="message" name="message" class="form-element" placeholder="Кратко в чем суть"></textarea>
-									    	</div>
-									    	<div class="wrap-capcha">
-									    		<label for="capcha">Введите код, указанный на картинке</label>
-									    		<div class="wrap-capcha-img">
-									    			<img src="img/capcha.png" height="66" width="173" alt="" class="capcha-img">	
-									    		</div>
-									    		<input type="text" id="capcha" name="capcha" class="form-element"
-										        	placeholder="Введите код" value="" required/>
-									    	</div>
-										    <div class="wrap-submit-button">
-										      <button type="submit" name="submit-form-sent" class="btn btn-sent">Отправить</button>
-										      <button type="reset"  name="submit-form-reset" class="btn btn-reset">Очистить</button>
-										    </div>
-  									</form>
-								</div>
-						</section>		
-				</main>
+			</div>
+			<div class="container">
+				<ul class="social-icons">
+					<li class="social-icon-item">
+						<a href="#" class="social-icon fb">
+							fb
+						</a>				
+					</li>
+					<li class="social-icon-item">
+						<a href="http://vk.com/laitinen_nikita" class="social-icon vk">
+							vk
+						</a>				
+					</li>
+					<li class="social-icon-item">
+						<a href="#" class="social-icon tw">
+							tw
+						</a>				
+					</li>
+					<li class="social-icon-item">
+						<a href="https://github.com/nikitalait" class="social-icon gt">
+							gt
+						</a>				
+					</li>
+					
+				</ul>
 			</div>
 		</div>
 		<footer class="main-footer">
 			<div class="container">
-				<a href="index.html" class="log-in">
+				<a href="fourth.html" class="log-in">
 					вход
 				</a>
 				<div class="copyright">
@@ -171,6 +209,10 @@
 				</div>  
 	      	</div>
 		</footer>
+	</div>
+
+	<div class="cb-message">
+		Сообщение отправлено!
 	</div>
 	
 
@@ -183,7 +225,8 @@
 
 
 <script src="js/jquery.min.js"></script>
-<script src="js/main.js"></script>
+<script src="js/jquery.placeholder.min.js"></script>
+<script src="js/mainworkli.js"></script>
 
 	
 </body>

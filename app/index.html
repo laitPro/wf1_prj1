@@ -20,6 +20,8 @@
 	</noscript>
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/third.css">
+		<link rel="stylesheet" href="css/five.css">
 		<link rel="stylesheet" href="css/_media.css">
 		<!-- Нужно все скомпилировать что выше и закинуть в этот файл -->
 		<!-- <link rel="stylesheet" href="compiled.min.css"> -->
@@ -53,44 +55,27 @@
 		<header class="main-header">
 			<div class="container-big clearfix">
 				<a href="index.html" class="logo">
-					<img src="img/logo.png" height="71" width="95" alt="Logo" class="logo-img ">
+					<img src="img/logo.png" height="71" width="95" alt="Logo" class="logo-img">
 					<h1 class="logo-text">
 						LoftSchool...
 					</h1>
 				</a>
+				<a class="main-nav-toggle" href="#"><span></span></a>
 				<ul class="icons">
 					<li class="icons-item">
-						<a href="#" class="icon icon-fb">facebook</a>
-						<!-- <a href="#" class="icon-text">
-							facebook
-						</a>	 -->					
+						<a href="#" class="icon icon-fb">facebook</a>				
 					</li>
 					<li class="icons-item">
-						<a href="http://vk.com/laitinen_nikita" class="icon icon-vk">vkontakte</a>
-						<!-- <a href="#" class="icon-text">
-							vkontakte
-						</a> -->
+						<a href="http://vk.com/laitinen_nikita" class="icon icon-vk">vkontakte</a>			
 					</li>
 					<li class="icons-item">
-						<a href="#" class="icon icon-tw">twitter</a>
-						<!-- <a href="#" class="icon-text">
-							twitter
-						</a> -->						
+						<a href="#" class="icon icon-tw">twitter</a>					
 					</li>
 					<li class="icons-item">
 						<a href="https://github.com/nikitalait" class="icon icon-gt">githab</a>
-						<!-- <a href="#" class="icon-text">
-							githab
-						</a> -->
 					</li>
 				</ul>
-			</div>
-		</header>
-
-		<div class="main-content">
-			<div class="container clearfix">
-				<aside class="sidebar">	
-					<ul class="main-nav">	
+				<ul class="main-nav header">	
 						<li class="mn-link-item active">
 							<a href="index.html" class="link">Обо мне</a>
 						</li>
@@ -100,32 +85,11 @@
 						<li class="mn-link-item">
 							<a href="third.html" class="link">Обратная связь</a>
 						</li>        				
-					</ul>
-					<div class="contacts">	
-						<div class="contacts-title-wrap">
-							<div class="contacts-title">
-								<span class="contacts-title-text">Контакты</span>
-							</div>
-						</div>
-						<ul class="contacts-list">
-							<li class="contact">
-								<a href="mailto:nikitalaitinen@ya.ru" class="contact-text contact-text-email" title="pochta@mail.ru">
-									nikitalaitinen@ya.ru
-								</a>
-							</li>
-							<li class="contact">
-								<a href="tel:+7914097648" class="contact-text contact-text-phone" title="+79114097648">
-									+79114097648
-								</a>								
-							</li>
-							<li class="contact">
-								<a href="skype:nikitalait?call" class="contact-text contact-text-skype" title="nikitalait">
-									nikitalait
-								</a>								
-							</li>
-						</ul>
-					</div>
-				</aside>
+				</ul>
+			</div>
+		</header>
+		<div class="main-content">
+			<div class="container clearfix">				
 				<main class="main-content-wrapper">
 						<section class="content-section">
 								<h2 class="content-section-title">Основная информация</h2>
@@ -195,12 +159,74 @@
 								</div>
 						</section>
 				</main>
+				<aside class="sidebar">	
+					<ul class="main-nav">	
+						<li class="mn-link-item active">
+							<a href="index.html" class="link active">Обо мне</a>
+						</li>
+						<li class="mn-link-item">
+							<a href="second.html" class="link">Мои работы</a>
+						</li>
+						<li class="mn-link-item">
+							<a href="third.html" class="link">Обратная связь</a>
+						</li>        				
+					</ul>
+					<div class="contacts">	
+						<div class="contacts-title-wrap">
+							<div class="contacts-title">
+								<span class="contacts-title-text">Контакты</span>
+							</div>
+						</div>
+						<ul class="contacts-list">
+							<li class="contact">
+								<a href="mailto:nikitalaitinen@ya.ru" class="contact-text contact-text-email" title="nikitalaitinen@ya.ru">
+									nikitalaitinen@ya.ru
+								</a>
+							</li>
+							<li class="contact">
+								<a href="tel:+7914097648" class="contact-text contact-text-phone" title="+79114097648">
+									+79114097648
+								</a>								
+							</li>
+							<li class="contact">
+								<a href="skype:nikitalait?call" class="contact-text contact-text-skype" title="nikitalait">
+									nikitalait
+								</a>								
+							</li>
+						</ul>
+					</div>
+				</aside>
+				
 			</div>
-
+			<div class="container">
+				<ul class="social-icons">
+					<li class="social-icon-item">
+						<a href="#" class="social-icon fb">
+							fb
+						</a>				
+					</li>
+					<li class="social-icon-item">
+						<a href="http://vk.com/laitinen_nikita" class="social-icon vk">
+							vk
+						</a>				
+					</li>
+					<li class="social-icon-item">
+						<a href="#" class="social-icon tw">
+							tw
+						</a>				
+					</li>
+					<li class="social-icon-item">
+						<a href="https://github.com/nikitalait" class="social-icon gt">
+							gt
+						</a>				
+					</li>
+					
+				</ul>
+			</div>
 		</div>
 		<footer class="main-footer">
-			<div class="container">
-				<a href="index.html" class="log-in">
+			<div class="container clearfix">
+				<a href="fourth.html" class="log-in">
 					вход
 				</a>
 				<div class="copyright">
@@ -209,18 +235,16 @@
 	      	</div>
 		</footer>
 	</div>
-	
 
 
 
-
-<div class="hidden"></div>
 
 
 
 
 <script src="js/jquery.min.js"></script>
-<script src="js/main.js"></script>
+<script src="js/jquery.placeholder.min.js"></script>
+<script src="js/mainworkli.js"></script>
 
 </body>
 </html>
