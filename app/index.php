@@ -1,3 +1,6 @@
+<?php 
+	session_start();
+ ?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class=" ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class=" ie ie7" lang="en"> <![endif]-->
@@ -9,15 +12,14 @@
 	<meta name="description" content="">
 
 	<!-- Fonts Loader from _fonts.css (HTML5 LocalStorage) -->
-	<script>!function(){function e(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function t(e){return window.localStorage&&localStorage.font_css_cache&&localStorage.font_css_cache_file===e}function n(){if(window.localStorage&&window.XMLHttpRequest)if(t(o))a(localStorage.font_css_cache);else{var n=new XMLHttpRequest;n.open("GET",o,!0),e(n,"load",function(){4===n.readyState&&(a(n.responseText),localStorage.font_css_cache=n.responseText,localStorage.font_css_cache_file=o)}),n.send()}else{var c=document.createElement("link");c.href=o,c.rel="stylesheet",c.type="text/css",document.getElementsByTagName("head")[0].appendChild(c),document.cookie="font_css_cache"}}function a(e){var t=document.createElement("style");t.innerHTML=e,document.getElementsByTagName("head")[0].appendChild(t)}var o="css/font.css";window.localStorage&&localStorage.font_css_cache||document.cookie.indexOf("font_css_cache")>-1?n():e(window,"load",n)}();</script>
+<script>!function(){function e(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function t(e){return window.localStorage&&localStorage.font_css_cache&&localStorage.font_css_cache_file===e}function n(){if(window.localStorage&&window.XMLHttpRequest)if(t(o))a(localStorage.font_css_cache);else{var n=new XMLHttpRequest;n.open("GET",o,!0),e(n,"load",function(){4===n.readyState&&(a(n.responseText),localStorage.font_css_cache=n.responseText,localStorage.font_css_cache_file=o)}),n.send()}else{var c=document.createElement("link");c.href=o,c.rel="stylesheet",c.type="text/css",document.getElementsByTagName("head")[0].appendChild(c),document.cookie="font_css_cache"}}function a(e){var t=document.createElement("style");t.innerHTML=e,document.getElementsByTagName("head")[0].appendChild(t)}var o="css/font.css";window.localStorage&&localStorage.font_css_cache||document.cookie.indexOf("font_css_cache")>-1?n():e(window,"load",n)}();</script>
 	<!--[if lt IE 9]>
 	<script src="js/html5shiv.min.js"></script>
 	<![endif]-->
 	<!-- Load CSS Compilled without JS -->
-
-	<noscript>
-		<link rel="stylesheet" href="css/_fonts.css">
-	</noscript>
+		<noscript>
+			<link rel="stylesheet" href="css/_fonts.css">
+		</noscript>
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/third.css">
@@ -77,14 +79,14 @@
 				</ul>
 				<ul class="main-nav header">	
 						<li class="mn-link-item active">
-							<a href="index.html" class="link">Обо мне</a>
+							<a href="index.php" class="link">Обо мне</a>
 						</li>
 						<li class="mn-link-item">
-							<a href="second.html" class="link">Мои работы</a>
+							<a href="second.php" class="link">Мои работы</a>
 						</li>
 						<li class="mn-link-item">
-							<a href="third.html" class="link">Обратная связь</a>
-						</li>        				
+							<a href="third.php" class="link">Обратная связь</a>
+						</li>          				
 				</ul>
 			</div>
 		</header>
@@ -162,13 +164,13 @@
 				<aside class="sidebar">	
 					<ul class="main-nav">	
 						<li class="mn-link-item active">
-							<a href="index.html" class="link active">Обо мне</a>
+							<a href="index.php" class="link active">Обо мне</a>
 						</li>
 						<li class="mn-link-item">
-							<a href="second.html" class="link">Мои работы</a>
+							<a href="second.php" class="link">Мои работы</a>
 						</li>
 						<li class="mn-link-item">
-							<a href="third.html" class="link">Обратная связь</a>
+							<a href="third.php" class="link">Обратная связь</a>
 						</li>        				
 					</ul>
 					<div class="contacts">	
@@ -226,9 +228,22 @@
 		</div>
 		<footer class="main-footer">
 			<div class="container clearfix">
-				<a href="fourth.html" class="log-in">
-					вход
-				</a>
+				<?php
+				if ($_SESSION['aut'] == 'true') {
+				?>	
+					<a href="logout.php" class="log-in">
+					выход
+					</a>
+				<?php
+				}
+				else {					
+				?>					
+					<a href="fourth.php" class="log-in">
+						вход
+					</a>
+				<?php 
+				}
+				 ?>
 				<div class="copyright">
 					 &copy; 2016. Это мой сайт, пожалуйста, не копируйте и не воруйте его
 				</div>  

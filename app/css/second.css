@@ -1,4 +1,7 @@
 /*SECOND PAGE*/
+.job-info{
+	font-size: 0;
+}
 .job{
 	behavior: url('js/PIE.htc');
 }
@@ -24,6 +27,7 @@
 	margin-left:0;
 }
 .wrap-job-img{
+	height: 119px;
 	position: relative;
 	overflow: hidden;
 	border-bottom: 1px solid #c0c0c0;
@@ -31,7 +35,7 @@
 }
 .wrap-job-img:hover .more-info{
 	background-image: url('../img/hover-bac_03.png');
-	/*background: rgba(111,109,109,0.7);	*/
+	background: rgba(111,109,109,0.7);	
 }
 .wrap-job-img:hover .more-info-text{
 	display: block;
@@ -54,13 +58,14 @@
 }
 .more-info-text{
 	transform: scale(0);
+	font-size: 16px;
 	display: block;
 	padding:3px;
 	border-radius: 3px;
 	color: black;
 	position: absolute;
 	top: 50%; left: 50%;
-	margin-left:-50px;
+	margin-left:-45px;
 	margin-top:-12px;
 	vertical-align: top;
 	background-color: white;

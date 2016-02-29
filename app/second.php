@@ -1,5 +1,17 @@
-
-
+<?php
+session_start();
+// Подключаемся к базе
+	require_once('db.php');
+	// Делаем выборку из базы из таблицы портфолио
+	$sql = 'SELECT * FROM Portfolio';
+	$res = $DB->query($sql);
+	if($res -> rowCount() > 0){
+		$port = array();
+		while($row = $res -> fetch()){
+			$port[] = $row;
+		}
+	}
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class=" ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class=" ie ie7" lang="en"> <![endif]-->
@@ -11,7 +23,7 @@
 	<meta name="description" content="">
 
 	<!-- Fonts Loader from _fonts.css (HTML5 LocalStorage) -->
-	<script>!function(){function e(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function t(e){return window.localStorage&&localStorage.font_css_cache&&localStorage.font_css_cache_file===e}function n(){if(window.localStorage&&window.XMLHttpRequest)if(t(o))a(localStorage.font_css_cache);else{var n=new XMLHttpRequest;n.open("GET",o,!0),e(n,"load",function(){4===n.readyState&&(a(n.responseText),localStorage.font_css_cache=n.responseText,localStorage.font_css_cache_file=o)}),n.send()}else{var c=document.createElement("link");c.href=o,c.rel="stylesheet",c.type="text/css",document.getElementsByTagName("head")[0].appendChild(c),document.cookie="font_css_cache"}}function a(e){var t=document.createElement("style");t.innerHTML=e,document.getElementsByTagName("head")[0].appendChild(t)}var o="css/font.css";window.localStorage&&localStorage.font_css_cache||document.cookie.indexOf("font_css_cache")>-1?n():e(window,"load",n)}();</script>
+<script>!function(){function e(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent&&e.attachEvent("on"+t,n)}function t(e){return window.localStorage&&localStorage.font_css_cache&&localStorage.font_css_cache_file===e}function n(){if(window.localStorage&&window.XMLHttpRequest)if(t(o))a(localStorage.font_css_cache);else{var n=new XMLHttpRequest;n.open("GET",o,!0),e(n,"load",function(){4===n.readyState&&(a(n.responseText),localStorage.font_css_cache=n.responseText,localStorage.font_css_cache_file=o)}),n.send()}else{var c=document.createElement("link");c.href=o,c.rel="stylesheet",c.type="text/css",document.getElementsByTagName("head")[0].appendChild(c),document.cookie="font_css_cache"}}function a(e){var t=document.createElement("style");t.innerHTML=e,document.getElementsByTagName("head")[0].appendChild(t)}var o="css/font.css";window.localStorage&&localStorage.font_css_cache||document.cookie.indexOf("font_css_cache")>-1?n():e(window,"load",n)}();</script>
 	<!--[if lt IE 9]>
 	<script src="js/html5shiv.min.js"></script>
 	<![endif]-->
@@ -47,6 +59,7 @@
 	<link rel="manifest" href="img/fav/manifest.json">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="img/fav/ms-icon-144x144.png">
+	
 	<meta name="theme-color" content="#ffffff">
 
 	<script src="js/modernizr.js"></script> 
@@ -79,13 +92,13 @@
 				</ul>
 				<ul class="main-nav header">	
 						<li class="mn-link-item ">
-							<a href="index.html" class="link">Обо мне</a>
+							<a href="index.php" class="link">Обо мне</a>
 						</li>
 						<li class="mn-link-item active">
-							<a href="second.html" class="link">Мои работы</a>
+							<a href="second.php" class="link">Мои работы</a>
 						</li>
 						<li class="mn-link-item">
-							<a href="third.html" class="link">Обратная связь</a>
+							<a href="third.php" class="link">Обратная связь</a>
 						</li>        				
 				</ul>
 			</div>
@@ -97,83 +110,50 @@
 						<section class="content-section">
 								<h2 class="content-section-title">Мои работы</h2>
 								<div class="wrap-info job-info clearfix">
-									<div class="job">									
-										<div class="wrap-job-img">
-											<div class="more-info">
-												<a href="#" class="more-info-text">"Подробнее"</a>
-											</div>
-											<img src="img/pic1.jpg" height="119" width="166" alt="wgwg" class="job-img">
-										</div>
-										<a href="#" class="job-title">a-industry.ru</a>
-										<p class="job-text">
-											Корпоративный и в тоже время продающий сайт строительной компании a-industry.
-										</p>
-									</div>
-									<div class="job">
-										<div class="wrap-job-img">
-											<div class="more-info">
-												<a href="#" class="more-info-text">"Подробнее"</a>
-											</div>
-											<img src="img/pic-2.jpg" height="118" width="165" alt="qfqfqf" class="job-img">
-										</div>
-										<a href="#" class="job-title">домгазобетон.рф</a>
-										<p class="job-text">
-											Продающая страница для компании ledenland.
-										</p>
-									</div>
-									<div class="job">
-										<div class="wrap-job-img">
-											<div class="more-info">
-												<a href="#" class="more-info-text">"Подробнее"</a>
-											</div>
-											<img src="img/pic3-.jpg" height="119" width="166" alt="eheh" class="job-img">
-										</div>
-										<a href="#" class="job-title">crmconsulting.biz</a>
-										<p class="job-text">
-											Лендинг компании «СRM Consulting» специализирующейся на точной настройке Битрикс24 для бизнеса.
-										</p>
-									</div>
-									<div class="job">
-										<div class="wrap-job-img">
-											<div class="more-info">
-												<a href="#" class="more-info-text">"Подробнее"</a>
-											</div>
-											<img src="img/pic4.jpg" height="118" width="166" alt="wh3h" class="job-img">
-										</div>
-										<a href="#" class="job-title">landingsloft.ru</a>
-										<p class="job-text">
-											Сайт по услугам разработки продающих лендингов.
-										</p>
-									</div>
-									<div class="job">
-										<div class="wrap-job-img">
-											<div class="more-info">
-												<a href="#" class="more-info-text">"Подробнее"</a>
-											</div>
-											<img src="img/pic5.jpg" height="119" width="166" alt="whhwh34" class="job-img">
-										</div>
-										<a href="#" class="job-title">yasnow.biz</a>
-										<p class="job-text">
-											Landing page по продажи франшизы снежного бизнеса.
-										</p>
-									</div>
-									<a href="#" class="job add-project">
-										<i class="icon-add-project"></i>
-										<p class="add-project-text">Добавить проект</p>
-									</a>								
+									<?php
+									if(!empty($port)){
+										foreach($port as $value){											
+												echo 
+												'<div class="job">
+													<div class="wrap-job-img">
+														<div class="more-info">
+																									
+														</div>
+															<a href="#" class="more-info-text">Подробнее</a>
+															<img src="files/'.$value['img_url'].'"  height="119" width="166" alt="'.$value['img_url'].'" class="job-img" />	
+													</div>
+													<a href="#" class="job-title">'.$value['url_prj'].'</a>
+													<p class="job-text">
+														'.$value['about_prj'].'
+													</p>
+												</div>'
+												;											
+										}
+									}
+									?>
+									<?php
+									if ($_SESSION['aut'] === 'true') {																			
+									?>																					
+										<a href="#" class="job add-project">
+											<i class="icon-add-project"></i>
+												<p class="add-project-text">Добавить проект</p>
+										</a>
+									<?php
+									}
+									?>																																		
 								</div>
 						</section>		
 				</main>
 				<aside class="sidebar">	
 					<ul class="main-nav">	
 						<li class="mn-link-item">
-							<a href="index.html" class="link">Обо мне</a>
+							<a href="index.php" class="link">Обо мне</a>
 						</li>
 						<li class="mn-link-item active">
-							<a href="second.html" class="link">Мои работы</a>
+							<a href="second.php" class="link">Мои работы</a>
 						</li>
 						<li class="mn-link-item">
-							<a href="third.html" class="link">Обратная связь</a>
+							<a href="third.php" class="link">Обратная связь</a>
 						</li>        				
 					</ul>
 					<div class="contacts">	
@@ -230,9 +210,23 @@
 		</div>
 		<footer class="main-footer">
 			<div class="container">
-				<a href="fourth.html" class="log-in">
-					вход
-				</a>
+				<?php
+				if ($_SESSION['aut'] == 'true') {
+				?>	
+					<a href="logout.php" class="log-in">
+					выход
+					</a>
+				<?php
+				}
+				else {					
+				?>					
+					<a href="fourth.php" class="log-in">
+						вход
+					</a>
+				<?php 
+				}
+				 ?>
+				
 				<div class="copyright">
 					 &copy; 2016. Это мой сайт, пожалуйста, не копируйте и не воруйте его
 				</div>  
@@ -244,8 +238,8 @@
 				<div class="add-title">Добавление проекта</div>
 				<form action="/" class="add-info" method="POST" id="add-form">
 						<a href="#" class="form-close close-btn"></a>
-						<div class="alert-error hidden">
-							<a href="#" class="form-close alert-error-close close-btn"></a>
+						<div class="alert alert-error hidden">
+							<a href="#" class="form-close alert-error-close alert-close"></a>
 							<p class="alert-error-title">Ошибка!</p>
 							<p class="alert-error-text">Невозможно добавить проект.</p>
 						</div>
@@ -257,8 +251,7 @@
 						<label for="img-prj" class="add-label">Картинка проекта</label>
 						<div class="tooltip-wrap">
 							<span class="tooltip-l hidden">изображение</span>
-							<input type="text"   placeholder="Выберите картинку" id="filename" class="add-input filename" disabled>
-							<!-- <span  id="filename" class="add-input filename"></span> -->
+							<input type="text"  placeholder="Выберите картинку" id="filename" name="filename" class="add-input filename">
 							<div class="file-upload">
 								<label for="img-prj" class="label-file">
 									<input type="file" name="file" id="img-prj" class="hard-input">
@@ -280,8 +273,8 @@
 						</div>													      
   				</form>
 			</div>
-			<div class="alert-added-box hidden">
-				<a href="#" class="form-close close-btn"></a>
+			<div class="alert-added-box hidden alert">
+				<a href="#" class="form-close close-btn alert-close"></a>
 				<div class="alert-added-info">
 					<p class="alert-added-title">Ура!</p>
 					<p class="alert-added-text">Проект успешно добавлен.</p>
@@ -290,6 +283,12 @@
 		</div>
 <div class="hidden"></div>
 <script src="js/jquery.min.js"></script>
+
+<!-- jQuery загрузка файлов -->
+<script src="js/jquery.ui.widget.js"></script>
+<script src="js/jquery.iframe-transport.js"></script>
+<script src="js/jquery.fileupload.js"></script>
+
 <script src="js/jquery.placeholder.min.js"></script>
 <script src="js/mainworkli.js"></script>
 	

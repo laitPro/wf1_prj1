@@ -1,5 +1,9 @@
 <?
 	
+	$private_key = '6LewzBgTAAAAABywU7XiCCHUaU3KVa6PUV8IFmY4';
+	$public_key = '6LewzBgTAAAAAPpc7mjcAKatvenqMKEtdxnLrhIj';
+	$google_url="https://www.google.com/recaptcha/api/siteverify";
+	$ip = $_SERVER['REMOTE_ADDR'];
 
 	// Массив с полученными данными
 	$datar = array();
@@ -7,7 +11,14 @@
 	foreach ($_POST as $key => $value) {
 		$datar[$key]=strip_tags(trim($value));
 	}
-
+	if(empty($_POST['g-recaptcha-response']))
+		exit('Где рекапча?');
+	$recaptcha = $_POST['g-recaptcha-response'];
+	$url = $google_url."?secret=".$private_key."&response=".$recaptcha."&remoteip=".$ip;
+	$google_res = file_get_contents($url);
+	$google_res = json_decode($google_res, true);
+	if($google_res['success'] != 1)
+		exit('Не верна гугла капча');
 
 	// Собираем данные полученные +ok
 
@@ -35,7 +46,7 @@
 	    echo 'Message could not be sent.';
 	$data = array();
 	$data['mes'] = 'OK';
-	// exit(1);
+
 	echo json_encode($data);
 
 

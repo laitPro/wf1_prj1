@@ -20,13 +20,14 @@ $(document).ready(function() {
 	});
 
 	$(document).on("click",function (e){ 
-
+		e.preventDefault;
 		var toggle = $(".main-nav-toggle"),
 			add= $(".add-project"),
 			popup=$(".popup-parent"),
 			add_pr=$(".add-wrap"),
-			add_close=$(".form-close"),
-			close_btn=$(".close-btn");
+			add_close=$(".close-btn"),
+			close_btn=$(".close-btn"),
+			btn_reset = $(".btn-reset");
 
 		if (!toggle.is(e.target) 
 			&& toggle.has(e.target).length === 0) { 
@@ -34,7 +35,14 @@ $(document).ready(function() {
 			$(".main-nav.header").removeClass('active');
 		 };
 
-		if (popup.is(e.target) && (popup.has(e.target).length <2 ) || (add_close.is(e.target) )) {
+
+		 if ($('.alert-close').is(e.target)) {
+		 	console.log("close");
+		 	$('.alert').addClass('hidden');
+		 };
+
+		if (popup.is(e.target)  || (add_close.is(e.target) )) {
+			e.preventDefault;
 			$('.add-wrap')
 			.animate({opacity: 0, top: '40%'}, 300, 
 				function(){ 
@@ -55,14 +63,14 @@ $(document).ready(function() {
 				});     
 		};	
 	});	 
-	$(document).on("change",function (e){
-		if ($("#img-prj").is(e.target)) {
-			// $("#filename").val($("#img-prj").val());
-			// console.log($("#img-prj").val());
-			$("#filename").val($("#img-prj").val());
-			$("#filename").trigger('change');
-		};
-	});
+	// $(document).on("change",function (e){
+	// 	if ($("#img-prj").is(e.target)) {
+	// 		// $("#filename").val($("#img-prj").val());
+	// 		// console.log($("#img-prj").val());
+	// 		$("#filename").val($("#img-prj").val());
+	// 		$("#filename").trigger('change');
+	// 	};
+	// });
 	$(document).on("keyup",function (e){
 		if (e.keyCode === 27) {
 			$(".popup-parent").addClass('hiddden');
@@ -78,6 +86,11 @@ $(document).ready(function() {
 	});
 });
 
+ $('.wrap-submit-button').find('btn-reset').on('click', function(event) {
+ 	event.preventDefault();
+ 	grecaptcha.reset();
+ });
+
 
 if (!String.prototype.trim) {
   String.prototype.trim = function () {
@@ -86,9 +99,6 @@ if (!String.prototype.trim) {
 }
 
 
-// console.log($("#add-form").serialize());
-// console.log($("#form-message").serialize());
-// console.log($("#test").serialize());
 
 ajax = function() {;
 	var t ={};
@@ -106,7 +116,7 @@ ajax = function() {;
 					dataType : "json",
 					data : apiData
 				};
-				console.log("I am ajax");
+				// console.log("I am ajax");
 				// console.log(data);
 				// console.log("Данные в спец виде:",data.serialize());
 				return $.ajax(options);
@@ -133,11 +143,47 @@ function cb_message(result,form){
 			.css('display', 'none');
 	} 
 	, 2000);
+	grecaptcha.reset();
 
 	form[0].reset();
 }
-function cb_add(){
-	console.log("I am call back function from add form");
+function cb_add(result,form){
+	console.log(result);
+	if (result['mes'] === 'ERROR') {
+		$(".alert-error").removeClass('hidden');
+		form[0].reset();
+	}
+	else{
+		$(form).addClass('hidden');
+		form[0].reset();
+		$(".alert-added-box").removeClass('hidden');
+		setTimeout( function() { 
+			location.href='second.php';
+		} 
+		, 1000);		
+	}
+}
+function cb_aut(result,form){
+	console.log(result);
+	console.log("I am callback for autorizate!");
+	console.log(result['mes']);
+	if (result['mes']=== 'OK') {
+		$(".cb-aut").text('Данные верные!');
+		$(".cb-aut").show('fast');
+		setTimeout( function() { 
+			location.href='second.php';
+		} 
+		, 1000);
+		
+	}
+	else{
+		$(".cb-aut").show('fast');
+		form[0].reset();
+		setTimeout( function() { 
+			$(".cb-aut").hide('fast');
+		} 
+		, 1000);
+	}
 }
 
 function mymodule (){ 
@@ -173,7 +219,6 @@ function mymodule (){
 			 $(field).removeClass('input-error');
 			 $(field).prev().addClass('hidden');                                           
 		} 
-		// console.log("Массив ошибок при ресете",error_mas);
 	}
 
 	function onFieldKeyup( e ){
@@ -183,10 +228,10 @@ function mymodule (){
 	}
 
 	function setInput(fieldName){
+		// console.log($(fieldName).val());
 		var el_val = $(fieldName).val().trim();
-		console.log("fieldName",el_val);
+		
 		flag = true;
-		// console.log(el_val);
 		if (rules[fieldName].required && el_val === '' || el_val.length > rules[fieldName].maxlength) {
 			flag = false;
 		};
@@ -200,7 +245,6 @@ function mymodule (){
 			$(fieldName).prev().removeClass('hidden');
 			error_mas[fieldName] = true;
 		}
-		console.log("Массив ошибок в процессе валидации:",error_mas);
 	}
 
 	function addFormListener(){
@@ -210,6 +254,7 @@ function mymodule (){
 	}
 	function onSubmit(e) {
 		e.preventDefault();
+		console.log("Mas error",error_mas);
 		var obj;
 			 u = url['url'];
 		if (flfirst) {
@@ -219,21 +264,20 @@ function mymodule (){
 			flfirst = false;
 		}
 		if (isEmpty(error_mas)) {
-			// console.log("Перед отправкой",form);
 			sendForm(u,form);
 		}
 	}
 
 	function sendForm(url,data){
+		console.log("Mas error",error_mas);
+		console.log("go send");
 		var defer = ajax().send(url,data);
-		// console.log(defer);
 		defer.done(function (ans) {
-			console.log("No problema-send");
-			cal_bac.fn("SUCCESS",form);
+			cal_bac.fn(ans,form);
 		});
+		// Вот здесь вопрос!!!!
 		defer.fail(function (){
-			console.log("error");
-			cal_bac.fn("ERROR",form);
+			
 		})
 	}
 
@@ -249,14 +293,13 @@ function mymodule (){
 			 	}
 			 	cal_bac = c.cal_bac || {};
 			 	url = c.ajax;
-				console.log("Массив ошибок в самом начале:",error_mas);
 				addFormListener(); 
+				console.log(rules);
 			}
 		};
 	}
 	return me;
 };
-
 
 var form1 = new mymodule();
 form1.validate($("#add-form"),{
@@ -294,20 +337,62 @@ form2.validate($("#form-message"),{
 		},
 		'#message' : {
 			'required' : true
-		},
-		'#capcha' : {
-			'required' : true
 		}
 	},
 	ajax: {
 		'url' : 'message.php'
 	},
+	// Обязательно нужно прописать! Иначе ошибка будет как лучше???
 	cal_bac: {
 		fn : cb_message
 	}
 });
 
+var form3 = new mymodule();
 
+form3.validate($("#autorizate"),{
+	rules: {
+		'#pass': {
+			'requi red' : true
+		},
+		'#email' : {
+			'required' : true
+		}
+	},
+	ajax: {
+		'url' : 'aut.php'
+	},
+	cal_bac: {
+		fn : cb_aut
+	}
+});
+$(".file-upload").on('click', function(e) {
+	// Загрузка файла
+	$('#img-prj').fileupload({
+			url: 'file_upload.php',
+	        add: function (e, data) {                                         
+	           		data.submit();   	
+	        },
+	        done: function (e, data){    
 
-
-
+	        			var res;
+	        			res = JSON.parse(data.result);      			
+	        			if (res['mes'] === 'OK') {
+							console.log("Файл успешно загружен!");
+							$('#filename').val(res['name_img']); 
+							$("#filename").trigger('change');
+	        			}
+	        			else
+	        			{
+	        				console.log("Вы ввели не изображение!!");
+							$('#filename').attr("placeholder","Выберите картинку!!!");
+							$("#filename").trigger('change');
+	        			}                   
+	                  },
+	        fail: function(e, data) {
+	         	console.log("Неизвестная ошибка");
+	         	$(".alert-error").removeClass('hidden');
+	         	$(".add-info").reset();
+	        }
+	 });
+});
