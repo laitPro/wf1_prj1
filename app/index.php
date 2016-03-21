@@ -154,8 +154,8 @@
        										<p class="life-skill-time">2013 - по настоящее время</p>
 										</li>
 										<li class="life-skill loft">
-											<p class="life-skill-text">Курсы Loftschool.ru</p>
-       										<p class="life-skill-time">Январь 2016 - по настоящее время</p>
+											<p class="life-skill-text">Youtube</p>
+       										<p class="life-skill-time">2014 - ...</p>
 										</li>
 									</ul>
 								</div>

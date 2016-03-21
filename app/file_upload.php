@@ -2,7 +2,6 @@
 
 	$data['mes'] = 'ERROR';
 	
-
 	if(empty($_FILES)){
 		echo json_encode($data);
 		exit(1);
