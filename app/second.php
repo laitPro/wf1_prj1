@@ -72,7 +72,7 @@ session_start();
 				<a href="index.html" class="logo">
 					<img src="img/logo.png" height="71" width="95" alt="Logo" class="logo-img ">
 					<h1 class="logo-text">
-						LoftSchool...
+						sometext...
 					</h1>
 				</a>
 				<a class="main-nav-toggle" href="#"><span></span></a>
